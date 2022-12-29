@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JWToken front</title>
+</head>
+<body>
+	
+	<h1>Front d'API JWToken</h1>
+	<p>Ouvrir la console pour plus d'infos.</p>
+	
+	<h2>/test</h2>
+	<p>Ici, requête GET sur la route <i>http://localhost:3000/test</i>. Le serveur renvoie des données selon l'état du jeton ACCESS.</p>
+	
+	<form id="formTest" action="http://localhost:3000/test" method="get">
+		<fieldset>
+			<legend>Test sans paramètre</legend>
+			<input type="submit" value="Lancer la requête">
+		</fieldset>
+		<fieldset>
+			<legend>Réponse</legend>
+			<textarea name="Reponse" cols="60" rows="2" id="textAreaTest"></textarea>
+		</fieldset>
+	</form>
+	
+	<h2>/test</h2>
+	<p>Même requête mais avec des paramètres et avec le jeton.</p>
+	
+	<form id="formTest2" action="http://localhost:3000/test" method="get">
+		<fieldset>
+			<legend>Test avec paramètre</legend>
+			
+			<label for="chose">N'importe quoi</label>
+            <input type="text" name="chose">
+						
+			<input type="submit" value="Lancer la requête">
+		</fieldset>
+		<fieldset>
+			<legend>Réponse</legend>
+			<textarea name="Reponse" cols="60" rows="2" id="textAreaTest2"></textarea>
+		</fieldset>
+	</form>
+	
+	<h2>/login</h2>
+	<p>Il s'agit de s'identifier en envoyant des données. Le formulaire est en méthode POST et se dirige sur route <i>http://localhost:3000/login</i>. Le serveur renvoie les jetons ACCESS et REFRESH.</p>
+	
+	<form id="formLogin" action="http://localhost:3000/login" method="post">
+		<fieldset>
+			<legend>Login</legend>
+			
+			<label for="Id">Id : </label>
+            <input type="number" name="Id" placeholder="1">
+			
+			<label for="Role">Rôle : </label>
+            <input type="text" name="Role" placeholder="admin">
+			
+			<input type="submit" value="Valider">
+		</fieldset>
+		<fieldset>
+			<legend>Réponse</legend>
+			<textarea name="Reponse" cols="140" rows="2" id="textAreaLogin"></textarea>
+		</fieldset>
+	</form>
+
+	
+	<script src="main.js"></script>
+</body>
+</html>
